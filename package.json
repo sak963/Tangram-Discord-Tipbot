@@ -1,0 +1,16 @@
+{
+  "name": "tangrambot",
+  "version": "0.1.0",
+  "description": "A Tangram testnet js tip bot",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pedro Bergamini",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "mongoose": "^5.3.0",
+    "request": "^2.88.0"
+  }
+}
