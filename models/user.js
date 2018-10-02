@@ -1,10 +1,10 @@
-const mongoose = require ("mongoose");
+const mongoose = require("mongoose");
 
-const UserSchema= new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
     discordId: String,
-    walletId:  String,
-    address:   String
+    walletId: String,
+    address: String
 }),
-      User = mongoose.model("User", UserSchema);
-      
-      module.exports = User;
+    User = mongoose.model("User", UserSchema);
+
+module.exports = User;
