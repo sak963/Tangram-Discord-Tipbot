@@ -19,7 +19,6 @@ bot.on("message", (message) => {
         const embed = new Discord.RichEmbed();
         embed.setTitle("Welcome to TangramBot v 0.2! Those are the commands:");
         embed.addField(".register", "Registers your account");
-        embed.addField(".create", "Generates your Tangram address");
         embed.addField(".balance", "Returns your account's balance");
         embed.addField(".deposit", "Returns your deposit address");
         embed.addField(".claim", "Claims 100 testnet $TGM");
