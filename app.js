@@ -163,14 +163,17 @@ bot.on("message", (message) => {
             if (error) {
                 message.channel.send("Something went wrong");
                 return console.log(error);
+            } else if (!receiverUser) {
+                return message.channel.send("This user is not registered");
             } else if (receiverUser && receiverUser.address) {
                 User.findOne({ discordId: message.author }, function (err, senderUser) {
                     if (err) {
                         message.channel.send("Something went wrong");
-                        return console.log(err);
+                    } else if (!senderUser || !senderUser.address) {
+                        return message.channel.send("You don't have an address, please generate one first");
                     } else if (senderUser.discordId == receiverUser.discordId) {
                         message.channel.send("You can't send $TGM to yourself :p");
-                    } else if (senderUser && senderUser.address && senderUser) {
+                    } else if (senderUser && senderUser.address) {
                         const headers = {
                             "accept": "application/json",
                             "Authorization": "",
@@ -193,13 +196,8 @@ bot.on("message", (message) => {
                                 return message.channel.send("Bad request");
                             }
                         });
-                    } else if (!senderUser || !senderUser.address) {
-                        message.channel.send("You don't have an address, please generate one first");
                     }
                 });
-            }
-            else if (!receiverUser) {
-                message.channel.send("This user is not registered");
             }
         });
     }
@@ -237,3 +235,4 @@ bot.on("message", (message) => {
 
 // ADD YOUR BOT TOKEN
 bot.login("");
+
