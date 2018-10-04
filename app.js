@@ -236,4 +236,5 @@ bot.on("message", (message) => {
     }
 });
 
+// ADD YOUR BOT TOKEN
 bot.login("");
